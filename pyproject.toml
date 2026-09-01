@@ -1,0 +1,11 @@
+[project]
+name = "qr-code-encoder"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "opencv-python>=5.0.0.93",
+    "pillow>=12.3.0",
+    "qrcode>=8.2",
+]
