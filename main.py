@@ -1,32 +1,11 @@
-from qr_code import QRCode
-from encoder import QREncoder
-from decoder import QRDecoder
-from validator import QRValidator
+from qr_application import QRApplication
 
-print("QRCode Encoder and Decoder")
+app = QRApplication()
 
-data = input("Enter the data/URL for the QR code: ")
-filename = input("Enter the filename for the QR code image (e.g., 'qrcode.png'): ")
+# Create QR
+qr_path = app.create_qr("Hello OOP", "oop.png")
+print(f"QR created: {qr_path}")
 
-qr = QRCode(data, filename)
-validator = QRValidator()
-if not validator.validate_data(qr.data):
-    print("Invalid QR code data")
-    exit()
-
-encoder = QREncoder()
-result = encoder.encode(qr)
-
-print(f"Encoded: {result}")
-
-decoder = QRDecoder()
-decoded_data = decoder.decode("generated_qr/hello.png")
-
-print(f"Decoded: {decoded_data}")
-
-validator = QRValidator()
-
-print(validator.validate_data("Hello Python"))
-print(validator.validate_data(""))
-print(validator.validate_data("   "))
-print(validator.validate_data("   Hello   "))
+# Decode QR
+data = app.decode_qr(qr_path)
+print(f"Decoded: {data}")
