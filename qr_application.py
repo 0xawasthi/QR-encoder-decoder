@@ -25,4 +25,4 @@ class QRApplication:
             raise ValueError("Invalid image path")
 
         return self.decoder.decode(image_path)
-    
+

@@ -1,0 +1,12 @@
+[
+    {
+        "operation": "encode",
+        "data": "Hello OOP",
+        "filename": "oop.png"
+    },
+    {
+        "operation": "decode",
+        "data": "Hello OOP",
+        "filename": "oop.png"
+    }
+]

@@ -1,11 +1,10 @@
-from qr_application import QRApplication
+from qr_history import QRHistory
 
-app = QRApplication()
+history = QRHistory()
 
-# Create QR
-qr_path = app.create_qr("Hello OOP", "oop.png")
-print(f"QR created: {qr_path}")
+history.add_entry("encode", "Hello OOP", "oop.png")
+history.add_entry("decode", "Hello OOP", "oop.png")
 
-# Decode QR
-data = app.decode_qr(qr_path)
-print(f"Decoded: {data}")
+print(history.get_history())
+
+history.save_history()
